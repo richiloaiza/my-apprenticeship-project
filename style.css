@@ -1,0 +1,319 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background: #003c8f;
+  color: #333;
+  padding: 20px;
+}
+/* Header with background image and overlay */
+.page-header {
+  position: relative;
+  background: url('https://images.carriercms.com/image/upload/w_1900,h_400,c_fill,g_center,q_auto,f_auto/v1648716801/carrier/commercial-hvac-europe/service/carrier-bluedge-service-technician-repair_h.jpg') no-repeat center center;
+  background-size: cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+}
+/* Overlay for dark shadow */
+.page-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+.page-title {
+  position: relative;
+  z-index: 1;
+  font-size: 3.5rem; /* Increased font size for emphasis */
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+}
+/* White strip containing the introductory paragraph, centered */
+.white-strip {
+  background: #fff;
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.6;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+/* Pillars Tabs Container with rounded corners */
+.tab-container {
+  max-width: 800px;
+  margin: 0 auto 10px auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.tab-buttons {
+  display: flex;
+  border-bottom: 2px solid #d3dce6;
+  background: rgba(255, 255, 255, 0.7);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.tab-button {
+  flex: 1;
+  padding: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-align: center;
+}
+.tab-button.active,
+.tab-button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+/* Pillar Content (hidden by default) */
+.tab-content {
+  border-radius: 8px;
+  transition: border-radius 0.3s;
+}
+.tab-content.active {
+  border-radius: 20px;
+}
+/* --- Pilaar 1 --- */
+.tab-button[data-tab="tab1"]:hover {
+  background: #AECBFA;
+  color: #333;
+}
+.tab-button[data-tab="tab1"].active {
+  background: #3b82f6;
+  color: #fff;
+}
+/* --- Pilaar 2 --- */
+.tab-button[data-tab="tab2"]:hover {
+  background: #AECBFA; /* Light purple on hover */
+  color: #333;
+}
+.tab-button[data-tab="tab2"].active {
+  background: #7C3AED;
+  color: #fff;
+}
+/* --- Pilaar 3 --- */
+.tab-button[data-tab="tab3"]:hover {
+  background: #93C5FD;
+  color: #333;
+}
+.tab-button[data-tab="tab3"].active {
+  background: #1D4ED8;
+  color: #fff;
+}
+.tab-content {
+  display: none;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  transition: border-radius 0.3s;
+}
+.tab-content.active {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* Content Styles for Pillars */
+.tab-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #3b82f6;
+}
+.tab-content p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+.tab-content ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+.tab-content li {
+  margin-bottom: 6px;
+}
+/* Hover effect on tasks: turn blue and bold */
+.details-content li {
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+.details-content li:hover {
+  color: #3b82f6;
+  font-weight: bold;
+}
+/* Minimaliseer button */
+.minimize-button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  background: #e2e8f0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.minimize-button:hover {
+  background: #d1dce4;
+}
+/* Timeline container */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 40px auto;
+}
+.timeline-item:hover .timeline-details {
+  box-shadow: 0 0 10px 2px #3b82f6;
+}
+/* Single vertical line behind all items */
+.timeline::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30px;
+  width: 4px;
+  background-color: #d3dce6;
+  z-index: 0;
+}
+/* Each timeline item */
+.timeline-item {
+  position: relative;
+  margin: 40px 0;
+  padding-left: 60px; 
+}
+/* Circle marker, centered on the line */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border: 3px solid #3b82f6;
+  border-radius: 50%;
+  z-index: 1;
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+/* When details are open, highlight the circle */
+.timeline-item.open::before {
+  background: #3b82f6;
+  border: none;
+  box-shadow: 0 0 10px #3b82f6;
+}
+/* Details box styling */
+details.timeline-details {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 15px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s ease;
+  text-align: left;
+  display: block;
+  width: 100%;
+}
+details.timeline-details[open] {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+details.timeline-details summary {
+  list-style: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  padding-right: 35px;
+  text-align: left;
+}
+details.timeline-details summary::-webkit-details-marker {
+  display: none;
+}
+details.timeline-details summary::after {
+  content: "➤";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.3s ease;
+  font-size: 1.2rem;
+  color: #3b82f6;
+}
+details.timeline-details[open] summary::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+.details-content {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4b5563;
+  text-align: left;
+}
+.details-content p {
+  margin-bottom: 10px;
+}
+.details-content ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+.details-content li {
+  margin-bottom: 6px;
+}
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .tab-buttons {
+    flex-direction: column;
+  }
+  .timeline::after {
+    left: 20px;
+  }
+  .timeline-item {
+    margin: 30px 0;
+    padding-left: 50px;
+  }
+  .timeline-item::before {
+    left: 12px;
+  }
+}
+/* Fixed control buttons at bottom-right */
+#controls {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 9999;
+}
+#controls button {
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: #f1f5f9;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+#controls button:hover {
+  background: #e2e8f0;
+}
